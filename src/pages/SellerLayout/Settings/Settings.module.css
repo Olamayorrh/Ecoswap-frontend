@@ -1,0 +1,203 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.settingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.settingsHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.fadedText {
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.btnPrimary {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profileBanner {
+  height: 200px;
+  width: 100%;
+  background-color: #F8B4B4; /* Placeholder pink bg matching mockup */
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  /* Instead of an image we use a solid background for placeholder if needed,
+     or you can map an image url in the future. */
+}
+
+.avatarWrapper {
+  position: absolute;
+  bottom: -40px;
+  left: 32px;
+}
+
+.avatarPlaceholder {
+  width: 90px;
+  height: 90px;
+  background-color: #E5E7EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+  position: relative;
+}
+
+.avatarIcon {
+  width: 48px;
+  height: 48px;
+  color: #9CA3AF;
+}
+
+.verifiedBadge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #10B981;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.profileDetailsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 56px 32px 32px 32px;
+}
+
+.profileText h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.jobTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.contactInfo {
+  font-size: 13px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.editProfileIcon {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #E5E7EB;
+  margin: 0 32px 32px 32px;
+}
+
+.activitySummarySection {
+  padding: 0 32px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 24px 0;
+}
+
+/* Base card styling (borrowed from Dashboard for consistency) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background-color: #FAFAF9; /* Off-white warm */
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.statHeader p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.iconBoxGreen {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D1FAE5; /* Emerald 100 */
+}
+
+.iconBoxLightGreen {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ECFDF5;
+}
+
+.statBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.statFooterGreen {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #059669; /* Emerald 600 */
+}

@@ -1,0 +1,308 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #111827;
+  margin: 0;
+  font-weight: 500;
+}
+
+.settingsBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  padding: 8px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background-color: #F8FAFC; /* Slate 50 */
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.statHeader h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.iconBoxGrid, .iconBoxMoney, .iconBoxGavel {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBoxGrid, .iconBoxMoney, .iconBoxGavel {
+  background-color: #D1FAE5; /* Emerald 100 */
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.statFooterGreen, .statFooterRed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statFooterGreen {
+  color: #059669; /* Emerald 600 */
+}
+
+.statFooterRed {
+  color: #EF4444; /* Red 500 */
+}
+
+/* My Activity Section */
+.activitySection {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.activityTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.activitySubtitle {
+  font-size: 14px;
+  color: #111827;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+.tabContainer {
+  display: flex;
+  background-color: #F3F4F6;
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 24px;
+}
+
+.tabBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.tabBtn.activeTab {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Order History Table */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.ordersTable th {
+  padding: 16px;
+  font-weight: 600;
+  color: #4B5563;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.ordersTable td {
+  padding: 16px;
+  color: #111827;
+  border-bottom: 1px solid #E5E7EB;
+  font-weight: 500;
+}
+
+.ordersTable tr:last-child td {
+  border-bottom: none;
+}
+
+.statusPill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.statusCompleted {
+  background-color: #D1FAE5;
+  color: #059669;
+}
+
+.statusPending {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.actionView {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Saved Items Grid */
+.savedItemsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.savedCard {
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImage {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.cardTop h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  max-width: 70%;
+}
+
+.tagGreen {
+  background-color: #D1FAE5;
+  color: #059669;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cardDetails p {
+  font-size: 14px;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.cardDetails p strong {
+  font-weight: 600;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.price {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.priceHighlight {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.heartIcon {
+  cursor: pointer;
+}
+
+.viewDetailsBtn {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.viewDetailsBtn:hover {
+  background-color: #059669;
+}

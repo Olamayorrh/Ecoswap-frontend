@@ -1,0 +1,21 @@
+@import url(normalize.css);
+@import url(variable.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sora:wght@100..800&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+};
+
+body{
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.container {
+  width: 100%;
+  padding: 0 4rem; /* Match the padding in the image */
+}

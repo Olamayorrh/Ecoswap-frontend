@@ -1,0 +1,41 @@
+:root {
+  /* Colors */
+  --primary-color: #0c805d; /* Base brand green */
+  --primary-hover: #086649;
+  --secondary: #0cb981;
+  
+  /* Light Theme */
+  --bg-color: #ffffff;
+  --card-bg: #f9fafb;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --accent-light: rgba(12, 128, 93, 0.1);
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --success-color: #10b981;
+
+  /* Sizing constants from previous state */
+  font-size: 10px;
+  --page-width: 151.2rem;
+  --page-height: 120rem;
+  --card-width: 132rem;
+  --card-height: 103.7rem;
+  --page-padding: 8.2rem 9.6rem 8.1rem 9.6rem;
+}
+
+[data-theme='dark'] {
+  --bg-color: #191c2b; /* Deep navy from image */
+  --card-bg: #222639; /* Slightly lighter card bg */
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-color: #2d3348;
+  --accent-light: rgba(12, 128, 93, 0.15);
+  --primary-color: #10b981; /* Brighter green for contrast on dark */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

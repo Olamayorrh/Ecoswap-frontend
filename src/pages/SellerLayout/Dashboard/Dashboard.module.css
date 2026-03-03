@@ -1,0 +1,336 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #111827;
+  margin: 0;
+  font-weight: 500;
+}
+
+.btnPrimary {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settingsBtn {
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  padding: 8px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background-color: #FAFAF9; /* Off-white warm */
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.statHeader p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.iconBoxGreen {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D1FAE5; /* Emerald 100 */
+}
+
+.iconBoxLightGreen {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ECFDF5;
+}
+
+.statBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.statFooterGreen, .statFooterRed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statFooterGreen {
+  color: #059669; /* Emerald 600 */
+}
+
+.statFooterRed {
+  color: #EF4444; /* Red 500 */
+}
+
+/* Listings Section */
+.listingsSection {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.listingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.activityTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.searchContainer {
+  background-color: #F9FAFB;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Table */
+.tableWrapper {
+  width: 100%;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.ordersTable th {
+  padding: 16px 24px;
+  font-weight: 500;
+  color: #6B7280;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.ordersTable td {
+  padding: 16px 24px;
+  color: #4B5563;
+  border-bottom: 1px solid #E5E7EB;
+  font-weight: 500;
+}
+
+.ordersTable tr:last-child td {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* Status Pills */
+.statusPill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.statusInStock {
+  background-color: #D1FAE5;
+  color: #059669;
+}
+
+.statusOutStock {
+  background-color: #FEE2E2;
+  color: #EF4444;
+}
+
+.statusLimited {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.statusSold {
+  background-color: #F3F4F6;
+  color: #6B7280;
+}
+
+.actionBtn {
+  background: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+/* Table Pagination */
+.tablePagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.paginationCoords {
+  display: flex;
+  gap: 12px;
+}
+
+.pageBtn {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Bottom Cards */
+.bottomCardsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.impactCard {
+  background-color: #D1FAE5; /* Emerald 100 base */
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.impactCard h3 {
+  font-size: 20px;
+  color: #064E3B; /* Emerald 900 */
+  margin: 0 0 12px 0;
+}
+
+.impactCard p {
+  color: #064E3B;
+  font-size: 14px;
+  margin: 0 0 24px 0;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.impactStats {
+  display: flex;
+  gap: 24px;
+}
+
+.impactBig {
+  font-size: 32px;
+  font-weight: 700;
+  color: #064E3B;
+}
+
+.offerCard {
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.offerText h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.offerText p {
+  color: #4B5563;
+  margin: 0 0 24px 0;
+  font-size: 14px;
+}
+
+.offerIconBox {
+  width: 60px;
+  height: 60px;
+  background-color: #D1FAE5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

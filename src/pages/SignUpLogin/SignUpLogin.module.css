@@ -1,0 +1,574 @@
+/* .container {
+  width: var(--page-width);
+  height: var(--page-height);
+  padding: var(--page-padding);
+} */
+
+.container {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  height: var(--page-height);
+  min-height: 100vh;
+  padding: var(--page-padding);
+}
+
+.container .cardLogin {
+  width: 100%;
+  max-width: 58.3rem;
+  min-height: 100vh;
+  height: 88.1rem;
+  display: flex;
+  color: white;
+}
+
+.container .card {
+  width: 100%;
+  max-width: var(--card-width);
+  height: var(--card-height);
+  min-height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.container .card__carbon {
+  width: 58.3rem;
+  height: 100%;
+  background-color: var(--backgroundColor);
+  padding: 1.8rem 3.3rem 4.9rem 3.2rem;
+  background-image: url("../../assets/images/tree.svg");
+  background-repeat: no-repeat;
+  background-position: right 87%;
+  background-size: contain;
+  background-size: 32rem;
+  border-radius: 2rem 0rem 0rem 2rem;
+}
+
+.container .card__carbonLogin {
+  width: 58.3rem;
+  height: 88.1rem;
+  background-color: var(--backgroundColor);
+  padding: 1.8rem 3.8rem 5.7rem 3.2rem;
+  background-image: url("../../assets/images/tree.svg");
+  background-repeat: no-repeat;
+  background-position: right 87%;
+  background-size: contain;
+  background-size: 32rem;
+  border-radius: 0rem 2rem 2rem 0;
+}
+
+.container .card__logoimg1 {
+  width: 7.3rem;
+  height: 7.4rem;
+}
+
+.container header {
+  width: 51.3rem;
+  height: 7.4rem;
+  border: 0px solid red;
+  margin-bottom: 8.6rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.container header h2 {
+  font-size: 1.4rem;
+}
+
+.container .card__value h1 {
+  width: 51.8rem;
+  height: 4.9rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.container .card__value p {
+  width: 51.8rem;
+  height: 15.4rem;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  text-align: justify;
+}
+
+.container .card__feedback {
+  margin-top: 18.4rem;
+  margin-bottom: 10.5rem;
+  width: 55rem;
+  height: 23.7rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2.8rem 1rem 2.6rem 3.5rem;
+  overflow: hidden;
+  border-radius: 2.5rem;
+}
+
+.container .card__feedback .feedback__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.container .card__feedback .feedback__header .feedback__img {
+  width: 4.7rem;
+  height: 4.7rem;
+  border: 0px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.container .card__feedback .feedback__header .feedback__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container .card__feedback .feedback__header .feedback__detail h1 {
+  font-size: 1.4rem;
+}
+
+.container .card__feedback .feedback__body {
+  margin-top: 0.9rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding-right: 1rem;
+  width: 59.3rem;
+  height: 12rem;
+  border: 0p solid red;
+}
+
+.container .card__trustees {
+  width: 45.2rem;
+  height: 5.9rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 0px solid red;
+  font-size: 1.4rem;
+}
+
+.container .trustees__images {
+  width: 13.8rem;
+  height: 5.9rem;
+  border: 0px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .trustees__imagg {
+  width: 5.6rem;
+  height: 5.9rem;
+  margin-left: -1.1rem;
+}
+
+.container .card__trustees p {
+  width: 30.1rem;
+  height: 5.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.container .cardLeft {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.container .cardRight {
+  display: flex;
+  flex-direction: row;
+}
+
+/* form styling */
+
+.container .card__form {
+  width: 73.7rem;
+  border: 1px solid #e0e0e0;
+  padding: 4rem 6.3rem;
+  color: black;
+  border-radius: 0 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .card__formLogin {
+  width: 58.3rem;
+  height: 88.1rem;
+  border: 1px solid #e0e0e0;
+  padding: 4rem 3.1rem 4.1rem 3rem;
+  color: black;
+  border-radius: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form__logo {
+  width: 100%;
+  height: 6.4rem;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.container .form__logo .form__icon {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.container .form__logo .form__Appname {
+  width: 15rem;
+  height: 5rem;
+}
+
+.container .form__account {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.container .form__account .form__community {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.container .form__account .form__community h1 {
+  width: 100%;
+  margin-top: 0.4rem;
+  font-weight: bold;
+  font-size: 2.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.container .form__account .form__community p {
+  width: 100%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.container .form__account .form__button {
+  width: 100%;
+  height: 6rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #f0eeee;
+  border-radius: 0.5rem;
+}
+
+.container .form__account .form__button .active__btn {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  flex: 1;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.container .form__account .form__button .inactive__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  flex: 1;
+  height: 100%;
+  font-size: 1.6rem;
+  color: #666;
+}
+
+.container .form__parent {
+  width: 100%;
+}
+
+.container .form__parentLogin {
+  width: 100%;
+}
+
+.container .form__child {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form__child label,
+.container .form__password label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.container .form__child input {
+  width: 100%;
+  height: 5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.container .form__child input:focus {
+  outline: none;
+  border-color: #2ac291;
+}
+
+.container .form__child .form__error {
+  color: red;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.container .form__child input::placeholder {
+  color: #999;
+}
+
+.container .form__child input[type="checkbox"],
+.container .form__agreement input[type="checkbox"] {
+  width: 1.8rem;
+  height: 1.8rem;
+  accent-color: white;
+  border: 1px solid #333;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+.container .form__roleSelection {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container .roleLabel {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.container .roleOptions {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.container .radioLabel {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.container .radioInput {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  accent-color: #2ac291;
+}
+
+.container .fileUploadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.container .fileInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.container .fileInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.container .fileCover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #2ac291;
+  background-color: #f2fbf8;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: #2ac291;
+  text-align: center;
+  min-height: 8rem;
+  pointer-events: none;
+}
+
+.container .uploadHint {
+  font-size: 1.3rem;
+  color: #666;
+  text-align: center;
+}
+
+.container .idInput {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+
+.container .passwordInputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container .passwordInput {
+  width: 100%;
+  padding-right: 4rem !important;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.container .passwordToggle {
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.container .form__check {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.container .form__check .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.container .form__check label {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+}
+
+.container .form__check .forgotPass {
+  color: #2ac291;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.container .form__submit {
+  width: 100%;
+  height: 5rem;
+  color: white;
+  border: none;
+  background-color: #1cc691;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.container .form__agreement {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.container .form__alternateSign {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .form__alternateSign p {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.container .form__alternateSign .alternateSign__button {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.container .form__alternateSign .alternateSign__button button {
+  flex: 1;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  background-color: #f0eeee;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.container .form__alternateSign .alternateSign__logo {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: var(--page-padding);
+  }
+
+  .container .card__carbon,
+  .container .card__carbonLogin {
+    display: none;
+  }
+
+  .container .cardLeft,
+  .container .cardRight {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container .card__form,
+  .container .card__formLogin {
+    width: 100%;
+    max-width: 60rem;
+    border-radius: 1rem;
+    padding: 3rem;
+  }
+}

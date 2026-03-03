@@ -1,0 +1,186 @@
+.notificationsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.titleArea h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  color: #6B7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.markReadBtn {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settingsBtn {
+  background-color: transparent;
+  border: 1px solid #E5E7EB;
+  color: #111827;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tabsOuter {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 32px;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  padding: 8px 0 16px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  position: relative;
+}
+
+.activeTab {
+  color: #10B981;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -8px;
+  right: -8px;
+  height: 2px;
+  background-color: #10B981;
+  border-radius: 2px;
+}
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+/* Card Base styles */
+.notificationCard {
+  background: white;
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Specific Card variants */
+.cardInterest {
+  border: 1px solid #4B5563;
+  border-left: 5px solid #4B5563; /* Dark Gray */
+}
+
+.cardTrust {
+  border: 1px solid #10B981;
+  border-left: 5px solid #10B981; /* Emerald Green */
+}
+
+.cardMessage {
+  border: 1px solid #3B82F6;
+  border-left: 5px solid #3B82F6; /* Blue */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleGroup h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.iconDarkGray { color: #4B5563; }
+.iconGreen { color: #10B981; }
+.iconBlue { color: #3B82F6; }
+
+.timeStr {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.cardBody {
+  padding-left: 32px; /* indent to align with text */
+}
+
+.cardBody p {
+  font-size: 14px;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 32px;
+  margin-top: 4px;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.textGreen { color: #10B981; }
+.textBlue { color: #3B82F6; }
+
+.unreadDotGreen {
+  width: 12px;
+  height: 12px;
+  background-color: #10B981;
+  border-radius: 50%;
+}

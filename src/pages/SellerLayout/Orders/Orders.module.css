@@ -1,0 +1,272 @@
+.ordersContainer {
+    padding-bottom: 5rem;
+    max-width: 1000px;
+}
+
+.breadcrumb {
+    font-size: 1.6rem;
+    color: #666;
+    display: block;
+    margin-bottom: 4rem;
+}
+
+.breadcrumb strong {
+    color: #333;
+}
+
+/* Tabs and Filter */
+.tabsAndFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+}
+
+.tabBtn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.activeTab {
+    background-color: #e8f9f2;
+    color: #1cc691;
+    font-weight: 500;
+}
+
+.sortFilter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+.sortSelect {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: #666;
+    outline: none;
+}
+
+/* Orders List */
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* ORDER CARD */
+.orderCard {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3rem;
+}
+
+.deliveryStatusRow {
+    text-align: right;
+    font-size: 1.2rem;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Progress Tracker */
+.progressTracker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.trackerStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0 1rem;
+    gap: 1rem;
+}
+
+.trackerDot {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
+.trackerDot.dotActive {
+    background-color: #1cc691;
+}
+
+.trackerLabel {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.trackerLabel.labelActive {
+    color: #1cc691;
+}
+
+.trackerLine {
+    flex: 1;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin-top: -3rem;
+    /* Align line with circles vertically */
+    z-index: 1;
+}
+
+.trackerLine.lineActive {
+    background-color: #1cc691;
+}
+
+/* Order Details */
+.orderDetailsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 3rem;
+}
+
+.itemInfo {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex: 1.5;
+}
+
+.itemImagePlaceholder {
+    width: 7rem;
+    height: 7rem;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.itemText h4 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.itemText p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.priceInfo {
+    flex: 1;
+    text-align: center;
+}
+
+.priceLabel {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.priceValue {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1.5;
+    justify-content: flex-end;
+}
+
+.btnOutlineBlack,
+.btnOutline,
+.btnDisabled,
+.btnPrimary {
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    min-width: 12rem;
+}
+
+.btnOutlineBlack {
+    background: white;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.btnOutline {
+    background: white;
+    border: 1px solid #1cc691;
+    color: #1cc691;
+}
+
+.btnPrimary {
+    background: #1cc691;
+    border: 1px solid #1cc691;
+    color: #fff;
+}
+
+.btnDisabled {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Footer Row */
+.footerRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.actionLink {
+    color: #1cc691;
+    text-decoration: none;
+}
+
+/* Load More */
+.loadMoreContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.btnLoadMore {
+    background: white;
+    border: 1px solid #1cc691;
+    color: #1cc691;
+    padding: 1.5rem 4rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnLoadMore:hover {
+    background: #1cc691;
+    color: white;
+}

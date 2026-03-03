@@ -1,0 +1,275 @@
+.notificationsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 900px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.titleArea h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.activeTitle {
+  color: #111827;
+}
+
+.fadedTitle {
+  color: #9CA3AF;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.markReadBtn {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.settingsIconBtn {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+}
+
+/* Tab Navigation */
+.tabContainer {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid transparent; /* Allows active indicator to align */
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tabBtn.activeTab {
+  background-color: #D1FAE5; /* Emerald 100 */
+  color: #059669; /* Emerald 600 */
+}
+
+/* Notifications List Cards */
+.notificationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notifCardSecondary, .notifCardDanger, .notifCardPrimary {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 20px 24px;
+  border-left: 4px solid #4B5563; /* Default gray lead */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.notifCardSecondary {
+  border-color: #4B5563; /* Slate 600 */
+}
+
+.notifCardDanger {
+  border-color: #EF4444; /* Red 500 */
+}
+
+.notifCardPrimary {
+  border-color: #3B82F6; /* Blue 500 */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleGroup h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.timeLabel {
+  font-size: 14px;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.cardBody {
+  margin: 12px 0;
+}
+
+.cardBody p {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Card Button Varieties */
+.actionBtnSecondary {
+  background: transparent;
+  border: none;
+  color: #4B5563;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionBtnDanger {
+  background: transparent;
+  border: none;
+  color: #EF4444;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionBtnPrimary {
+  background: transparent;
+  border: none;
+  color: #3B82F6;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.unreadDotBlue {
+  width: 12px;
+  height: 12px;
+  background-color: #10B981; /* Figma shows emerald dot for all unread */
+  border-radius: 50%;
+}
+
+/* Settings Sub-View */
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.settingBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E2E8F0; /* Slate 200 */
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.settingInfo h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.settingInfo p {
+  font-size: 14px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.toggleTrackActive, .toggleTrackInactive {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggleTrackActive {
+  background-color: #10B981;
+}
+
+.toggleTrackInactive {
+  background-color: #9CA3AF;
+}
+
+.toggleThumbActive, .toggleThumbInactive {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+}
+
+.toggleThumbActive {
+  right: 2px;
+}
+
+.toggleThumbInactive {
+  left: 2px;
+}
+
+.saveBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.saveBtn {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-weight: 500;
+  cursor: pointer;
+}
