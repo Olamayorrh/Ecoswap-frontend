@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Settings.module.css";
-import PersonalInfo from "./PersonalInfo";
-import Security from "./Security";
-import Payment from "./Payment";
+import PersonalInfo from "./PersonalInfo.jsx";
+import Security from "./Security.jsx";
+import Payment from "./Payment.jsx";
 import { AiOutlineCamera } from "react-icons/ai";
 
 const Settings = () => {

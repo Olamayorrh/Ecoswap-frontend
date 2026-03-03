@@ -4,10 +4,10 @@ import styles from './Listing.module.css';
 import { userContext } from '../../../context/Context';
 
 // We will build the individual step components in subsequent steps
-import InformationStep from './Steps/InformationStep';
-import DetailsStep from './Steps/DetailsStep';
-import LogisticsStep from './Steps/LogisticsStep';
-import ReviewUploadStep from './Steps/ReviewUploadStep';
+import InformationStep from './Steps/InformationStep.jsx';
+import DetailsStep from './Steps/DetailsStep.jsx';
+import LogisticsStep from './Steps/LogisticsStep.jsx';
+import ReviewUploadStep from './Steps/ReviewUploadStep.jsx';
 
 // Dummy icons for step indicators
 import { AiOutlineInfoCircle, AiOutlineProfile, AiOutlineCar, AiOutlineCheckCircle } from 'react-icons/ai';

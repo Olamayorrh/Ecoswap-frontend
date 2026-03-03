@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import Context from './context/Context.jsx'
 import { BrowserRouter } from 'react-router'
-import { ThemeProvider } from './context/ThemeContext'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

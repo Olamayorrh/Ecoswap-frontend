@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Sidebar from './Sidebar/Sidebar';
+import Sidebar from './Sidebar/Sidebar.jsx';
 import styles from './SellerLayout.module.css';
 
 const SellerLayout = () => {
