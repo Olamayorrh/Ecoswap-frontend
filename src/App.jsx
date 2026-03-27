@@ -1,26 +1,26 @@
 import { Route, Routes, Navigate } from "react-router";
 import "./assets/css/global.css";
-import LandingPage from "./Pages/LandingPage";
-import SignUpLogin from "./Pages/SignUpLogin/SignUpLogin";
-import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
-import ResetPassword from "./Pages/ResetPassword/ResetPassword";
-import SellerLayout from "./Pages/SellerLayout/SellerLayout";
-import Listing from "./Pages/SellerLayout/Listing/Listing";
-import Orders from "./Pages/SellerLayout/Orders/Orders";
-import Notifications from "./Pages/SellerLayout/Notifications/Notifications";
-import SellerDashboard from "./Pages/SellerLayout/Dashboard/SellerDashboard";
-import SellerSettings from "./Pages/SellerLayout/Settings/Settings";
-import SellerMessages from "./Pages/SellerLayout/Messages/Messages";
+import LandingPage from "./Pages/LandingPage.jsx";
+import SignUpLogin from "./Pages/SignUpLogin/SignUpLogin.jsx";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword.jsx";
+import ResetPassword from "./Pages/ResetPassword/ResetPassword.jsx";
+import SellerLayout from "./Pages/SellerLayout/SellerLayout.jsx";
+import Listing from "./Pages/SellerLayout/Listing/Listing.jsx";
+import Orders from "./Pages/SellerLayout/Orders/Orders.jsx";
+import Notifications from "./Pages/SellerLayout/Notifications/Notifications.jsx";
+import SellerDashboard from "./Pages/SellerLayout/Dashboard/SellerDashboard.jsx";
+import SellerSettings from "./Pages/SellerLayout/Settings/Settings.jsx";
+import SellerMessages from "./Pages/SellerLayout/Messages/Messages.jsx";
 
 // Buyer Layout Imports
-import UserLayout from "./Pages/UserLayout/UserLayout";
-import BuyerDashboard from "./Pages/UserLayout/Dashboard/Dashboard";
-import BuyerListing from "./Pages/UserLayout/Listing/BuyerListing";
-import BuyerMessages from "./Pages/UserLayout/Messages/Messages";
-import BuyerSettings from "./Pages/UserLayout/Settings/Settings";
-import BuyerNotifications from "./Pages/UserLayout/Notifications/Notifications";
+import UserLayout from "./Pages/UserLayout/UserLayout.jsx";
+import BuyerDashboard from "./Pages/UserLayout/Dashboard/Dashboard.jsx";
+import BuyerListing from "./Pages/UserLayout/Listing/BuyerListing.jsx";
+import BuyerMessages from "./Pages/UserLayout/Messages/Messages.jsx";
+import BuyerSettings from "./Pages/UserLayout/Settings/Settings.jsx";
+import BuyerNotifications from "./Pages/UserLayout/Notifications/Notifications.jsx";
 
-import ProtectedRoute from "./Components/ProtectedRoute";
+import ProtectedRoute from "./Components/ProtectedRoute.jsx";
 
 const App = () => {
   return (
