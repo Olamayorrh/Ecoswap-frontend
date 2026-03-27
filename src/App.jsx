@@ -35,6 +35,7 @@ const App = () => {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
 
           {/* Protected seller routes — redirect to / if not logged in */}
+          {/* nothing here */}
           <Route
             path="/seller"
             element={
