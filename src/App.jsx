@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from "react-router";
 import "./assets/css/global.css";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./Pages/LandingPage";
 import SignUpLogin from "./Pages/SignUpLogin/SignUpLogin";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword";
@@ -20,7 +20,7 @@ import BuyerMessages from "./Pages/UserLayout/Messages/Messages";
 import BuyerSettings from "./Pages/UserLayout/Settings/Settings";
 import BuyerNotifications from "./Pages/UserLayout/Notifications/Notifications";
 
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 const App = () => {
   return (
