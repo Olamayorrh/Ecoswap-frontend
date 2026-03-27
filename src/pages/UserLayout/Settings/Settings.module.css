@@ -12,9 +12,9 @@
 }
 
 .settingsHeader h2 {
-  font-size: 24px;
+  font-size: clamp(20px, 2vw, 28px);
   font-weight: 600;
-  color: #111827; /* Gray 900 */
+  color: #111827;
   margin: 0;
 }
 
@@ -91,14 +91,14 @@
 }
 
 .profileText h3 {
-  font-size: 20px;
+  font-size: clamp(17px, 1.7vw, 22px);
   font-weight: 600;
   margin: 0 0 8px 0;
   color: #111827;
 }
 
 .jobTitle {
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 15px);
   color: #4B5563;
   font-weight: 500;
   margin: 0 0 4px 0;
@@ -128,7 +128,7 @@
   background: transparent;
   border: none;
   padding: 12px 0;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 500;
   color: #4B5563;
   cursor: pointer;
@@ -144,4 +144,31 @@
 
 .tabContent {
   width: 100%;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .profileDetailsRow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+
+  .settingsHeader {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .profileBanner {
+    height: 150px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerButtons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }

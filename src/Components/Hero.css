@@ -16,9 +16,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: center;
-  max-width: 132rem;
+  max-width: 160rem;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 5rem;
 }
 
 /* ===== LEFT CONTENT ===== */

@@ -1,53 +1,595 @@
+/* =============================================
+   STEP CONTAINER
+   ============================================= */
 .stepContainer {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2.8rem;
 }
 
+/* =============================================
+   INPUT GROUPS
+   ============================================= */
 .inputGroup {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 }
 
-.inputGroup label {
+.fieldLabel {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #333;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
-.inputGroup input[type="text"],
-.inputGroup select,
-.inputGroup textarea {
+/* =============================================
+   INPUTS / SELECTS / TEXTAREA
+   ============================================= */
+.textInput,
+.selectInput,
+.textareaInput {
     width: 100%;
     padding: 1.2rem 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 0.8rem;
     font-size: 1.4rem;
     color: #333;
     font-family: inherit;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
 }
 
-.inputGroup input[type="text"]::placeholder,
-.inputGroup select::placeholder,
-.inputGroup textarea::placeholder {
-    color: #999;
+.selectInput {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    padding-right: 4rem;
+    cursor: pointer;
 }
 
-.inputGroup input[type="text"]:focus,
-.inputGroup select:focus,
-.inputGroup textarea:focus {
+.textInput::placeholder,
+.textareaInput::placeholder {
+    color: #aaa;
+}
+
+.textInput:focus,
+.selectInput:focus,
+.textareaInput:focus {
     outline: none;
     border-color: #1cc691;
+    box-shadow: 0 0 0 3px rgba(28, 198, 145, 0.1);
+}
+
+.textareaInput {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
 }
 
 .helperText {
     font-size: 1.1rem;
     color: #999;
     margin-top: 0.2rem;
+    line-height: 1.5;
 }
 
-/* Radio Group styling */
+/* =============================================
+   AI BADGE (label decoration)
+   ============================================= */
+.aiBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(135deg, #e8faf4, #d0f5e8);
+    color: #0fa770;
+    border: 1px solid #a0e9cc;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+.aiAppliedBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #1cc691;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+/* =============================================
+   UPLOAD AREA
+   ============================================= */
+.uploadArea {
+    border: 2px dashed #d0d0d0;
+    border-radius: 1.2rem;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    background-color: #fafbfc;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadArea:hover {
+    border-color: #1cc691;
+    background-color: #f2fbf8;
+}
+
+.uploadAreaAnalyzing {
+    border-color: #1cc691;
+    background-color: #f2fbf8;
+    cursor: default;
+}
+
+/* Upload placeholder content */
+.uploadPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.uploadIconWrapper {
+    width: 6rem;
+    height: 6rem;
+    background: #e8faf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1cc691;
+    margin-bottom: 0.5rem;
+}
+
+.uploadTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.uploadBrowse {
+    color: #1cc691;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.uploadSubtext {
+    font-size: 1.2rem;
+    color: #888;
+    margin: 0;
+    max-width: 400px;
+}
+
+.allowedFormats {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.allowedFormats span {
+    background-color: #eef0f2;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Analyzing state */
+.analyzingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.analyzingSpinner {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, #e8faf4, #b2f0d8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1cc691;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.analyzingText {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1cc691;
+    margin: 0;
+}
+
+.progressBar {
+    height: 4px;
+    background: #d0f5e8;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #1cc691, #0fa770);
+    border-radius: 4px;
+    animation: progressSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes progressSlide {
+    0%   { width: 0%; margin-left: 0; }
+    50%  { width: 70%; margin-left: 0; }
+    100% { width: 0%; margin-left: 100%; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.08); opacity: 0.85; }
+}
+
+/* Image preview grid */
+.previewGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.previewThumb {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.8rem;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+.previewThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    border: 1.5px solid #e0e0e0;
+}
+
+.removeThumb {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 2rem;
+    height: 2rem;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.addMoreThumb {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.8rem;
+    border: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+}
+
+.addMoreThumb:hover {
+    border-color: #1cc691;
+    color: #1cc691;
+}
+
+/* =============================================
+   AI ERROR BOX
+   ============================================= */
+.aiErrorBox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff3f3;
+    border: 1px solid #ffb3b3;
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.3rem;
+    color: #cc3333;
+}
+
+.aiErrorBox span {
+    flex: 1;
+}
+
+.dismissBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #cc3333;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* =============================================
+   AI SUGGESTION CARD
+   ============================================= */
+.aiSuggestionCard {
+    background: linear-gradient(135deg, #f2fbf8, #eafaf3);
+    border: 1.5px solid #1cc691;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.aiCardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aiCardTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.aiCardTitle h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.aiCardTitle h4 span {
+    color: #1cc691;
+}
+
+.dismissSuggestion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+
+.dismissSuggestion:hover {
+    color: #333;
+}
+
+.aiCardSubtitle {
+    font-size: 1.3rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Field preview rows */
+.aiFieldPreview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8rem;
+    padding: 1.4rem;
+}
+
+.aiFieldRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.aiFieldLabel {
+    font-weight: 700;
+    color: #555;
+    min-width: 90px;
+    flex-shrink: 0;
+}
+
+.aiFieldValue {
+    color: #1a1a1a;
+    flex: 1;
+}
+
+/* AI actions */
+.aiActions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: flex-end;
+}
+
+/* =============================================
+   AI PROMPT CARD (appears right after image is uploaded)
+   ============================================= */
+.aiPromptCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.6rem;
+    background: #f2fbf8;
+    border: 1.5px solid #1cc691;
+    border-radius: 1.2rem;
+    padding: 1.8rem 2rem;
+    animation: slideDown 0.3s ease;
+}
+
+.aiPromptIcon {
+    flex-shrink: 0;
+    width: 4.4rem;
+    height: 4.4rem;
+    background: #d5f5ea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aiPromptBody {
+    flex: 1;
+}
+
+.aiPromptBody h4 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem 0;
+}
+
+.aiPromptBody p {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.aiPromptActions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* =============================================
+   REQUIRED MARK
+   ============================================= */
+.requiredMark {
+    color: #e55;
+    margin-left: 2px;
+    font-weight: 700;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #1cc691, #0fa770);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: opacity 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btnPrimary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btnOutlineSecondary {
+    background-color: transparent;
+    color: #666;
+    border: 1.5px solid #d0d0d0;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btnOutlineSecondary:hover {
+    border-color: #999;
+    color: #333;
+}
+
+/* ── Compact AI Assist row ─────────────────── */
+.aiAssistRow {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    animation: slideDown 0.25s ease;
+}
+
+.btnAiAssist {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #1cc691, #0fa770);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 2rem;       /* pill shape */
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: opacity 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btnAiAssist:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.btnManualLink {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.btnManualLink:hover {
+    color: #333;
+}
+
+/* =============================================
+   RADIO GROUP (Logistics Step)
+   ============================================= */
 .radioGroup {
     display: flex;
     gap: 3rem;
@@ -70,185 +612,234 @@
     cursor: pointer;
 }
 
-/* Quantity and Unit combined input styling */
+/* =============================================
+   QUANTITY + UNIT ROW (Logistics)
+   ============================================= */
 .unitInputGroup {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 0.8rem;
     overflow: hidden;
+    transition: border-color 0.2s ease;
 }
 
 .unitInputGroup:focus-within {
     border-color: #1cc691;
+    box-shadow: 0 0 0 3px rgba(28, 198, 145, 0.1);
 }
 
 .quantityInput {
     flex: 1;
     border: none !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    outline: none;
+    color: #333;
 }
 
 .unitInput {
-    width: 100px !important;
+    width: 110px !important;
     border: none !important;
-    border-left: 1px solid #ccc !important;
+    border-left: 1.5px solid #e0e0e0 !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
     text-align: center;
-}
-
-/* Upload Area styling */
-.uploadArea {
-    border: 2px dashed #ccc;
-    border-radius: 1rem;
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #fafbfc;
+    background: #f8f8f8;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    outline: none;
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    padding-right: 2.5rem;
 }
 
-.uploadArea:hover {
-    border-color: #1cc691;
-    background-color: #f2fbf8;
-}
-
-.uploadIcon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1cc691;
-}
-
-.uploadSubtext {
-    font-size: 1.2rem;
-    color: #999;
-    margin: 1rem 0 2rem 0;
-}
-
-.allowedFormats {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.allowedFormats span {
-    background-color: #eee;
-    padding: 0.4rem 1rem;
-    border-radius: 2rem;
-    font-size: 1.1rem;
-    color: #666;
-    font-weight: 500;
-}
-
+/* =============================================
+   IMAGE PREVIEW (Review Step)
+   ============================================= */
 .imagePreviews {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 .previewBox {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 0.5rem;
-    background-color: #f0f0f0;
-    border: 1px solid #e0e0e0;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 0.8rem;
+    object-fit: cover;
+    border: 1.5px solid #e0e0e0;
 }
 
+/* =============================================
+   REVIEW BOX (Review Step)
+   ============================================= */
 .reviewBox {
     background-color: #fafbfc;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.2rem;
 }
 
 .reviewBox p {
     font-size: 1.4rem;
     color: #333;
     line-height: 1.5;
+    display: flex;
+    gap: 1rem;
 }
 
 .reviewBox p strong {
+    color: #777;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.reviewDescriptionBox {
+    background: #f5f5f5;
+    border-radius: 0.6rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0.2rem;
+}
+
+/* ── XL font scaling (≥1440px) ── */
+@media (min-width: 1440px) {
+    .fieldLabel {
+        font-size: 1.7rem;
+    }
+
+    .textInput,
+    .selectInput,
+    .textareaInput {
+        font-size: 1.6rem;
+        padding: 1.4rem 1.8rem;
+    }
+
+    .helperText {
+        font-size: 1.3rem;
+    }
+
+    .btnPrimary,
+    .btnOutlineSecondary,
+    .btnAiAssist {
+        font-size: 1.5rem;
+        padding: 1.2rem 2.4rem;
+    }
+
+    .aiCardTitle h4 {
+        font-size: 1.8rem;
+    }
+
+    .aiCardSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .aiFieldRow {
+        font-size: 1.5rem;
+    }
+
+    .uploadTitle {
+        font-size: 1.8rem;
+    }
+
+    .uploadSubtext {
+        font-size: 1.4rem;
+    }
+}
+
+/* ── Steps Responsive ── */
+@media (max-width: 640px) {
+    .stepContainer {
+        gap: 2rem;
+    }
+
+    .textInput,
+    .selectInput,
+    .textareaInput {
+        font-size: 1.6rem;  /* prevent iOS zoom on focus */
+        padding: 1.4rem 1.5rem;
+    }
+
+    .selectInput {
+        padding-right: 4.5rem;
+    }
+
+    .radioGroup {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .aiAssistRow {
+        flex-wrap: wrap;
+    }
+
+    .aiActions {
+        justify-content: stretch;
+        flex-direction: column;
+    }
+
+    .aiActions .btnPrimary,
+    .aiActions .btnOutlineSecondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .aiFieldRow {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .aiFieldLabel {
+        min-width: unset;
+    }
+
+    .unitInputGroup {
+        flex-direction: row; /* keep inline on mobile */
+    }
+
+    .unitInput {
+        width: 90px !important;
+    }
+
+    .reviewBox p {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .reviewBox p strong {
+        min-width: unset;
+    }
+}
+
+/* ── btnDecline (fill manually button) ── */
+.btnDecline {
+    background: none;
+    border: 1.5px solid #d0d0d0;
     color: #666;
-    display: inline-block;
-    width: 120px;
-}
-
-/* AI Upload Additions */
-.aiOverlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    border-radius: 1rem;
-    color: #1cc691;
+    padding: 0.8rem 1.4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1.25rem;
     font-weight: 600;
+    transition: border-color 0.2s, color 0.2s;
 }
 
-.spinAnimation {
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-.aiSuggestionBox {
-    background: #f2fbf8;
-    border: 1px solid #1cc691;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.aiHeader {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.aiHeader h4 {
-    margin: 0;
-    color: #1cc691;
-    font-size: 16px;
-}
-
-.aiSuggestionBox p {
-    margin: 0;
+.btnDecline:hover {
+    border-color: #999;
     color: #333;
-    font-size: 14px;
-}
-
-.aiActions {
-    display: flex;
-    gap: 12px;
-    margin-top: 8px;
-}
-
-.btnPrimary {
-    background-color: #1cc691;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btnOutlineSecondary {
-    background-color: transparent;
-    color: #666;
-    border: 1px solid #ccc;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
 }

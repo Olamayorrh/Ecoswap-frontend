@@ -11,3 +11,18 @@
     height: 100vh;
     overflow-y: auto;
 }
+
+/* ── Tablet/Mobile (≤768px) ── */
+@media (max-width: 768px) {
+    .mainContent {
+        margin-left: 0;
+        padding: 7rem 2.4rem 2.4rem;
+    }
+}
+
+/* ── Mobile (≤640px) ── */
+@media (max-width: 640px) {
+    .mainContent {
+        padding: 1.6rem;
+    }
+}

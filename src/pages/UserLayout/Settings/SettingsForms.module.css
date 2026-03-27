@@ -6,7 +6,7 @@
 }
 
 .sectionTitle {
-  font-size: 16px;
+  font-size: clamp(14px, 1.3vw, 18px);
   font-weight: 600;
   color: #111827;
   margin: 24px 0 8px 0;
@@ -34,7 +34,7 @@
 }
 
 .inputGroup label, .inputGroupFull label {
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 500;
   color: #111827;
 }
@@ -44,10 +44,10 @@
 .inputGroupFull select, 
 .inputGroupFull textarea {
   padding: 12px 16px;
-  border: 1px solid #D1D5DB; /* Gray 300 */
+  border: 1px solid #D1D5DB;
   border-radius: 8px;
   background-color: white;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 15px);
   color: #111827;
   outline: none;
   font-family: inherit;
@@ -76,14 +76,14 @@
 }
 
 .securityInfo h4, .paymentInfo h4, .billingInfo h4 {
-  font-size: 16px;
+  font-size: clamp(14px, 1.3vw, 17px);
   font-weight: 600;
   color: #111827;
   margin: 0 0 8px 0;
 }
 
 .securityInfo p, .paymentInfo p, .billingInfo p {
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: #9CA3AF;
   margin: 0;
 }
@@ -171,4 +171,26 @@
 
 .saveBtn:hover {
   background-color: #059669;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .inputRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .securityBox, .paymentBox, .billingBox {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .paymentActions {
+    flex-wrap: wrap;
+  }
+
+  .formSection {
+    max-width: 100%;
+  }
 }

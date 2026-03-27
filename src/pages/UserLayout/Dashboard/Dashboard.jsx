@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { userContext } from "../../../context/Context";
 import styles from "./Dashboard.module.css";
-import { AiOutlineSetting, AiOutlineArrowUp, AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiBox, BiMoney } from "react-icons/bi";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { FaHeart, FaHammer } from "react-icons/fa";
@@ -10,9 +10,9 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("OrderHistory");
   const { userInfo } = useContext(userContext);
 
-  // Extract first name (default to Amaka if no context)
-  const fullName = userInfo?.user?.fullname || "Amaka Martins";
-  const firstName = fullName.split(" ")[0];
+  // Extract first name from logged-in user
+  const fullName = userInfo?.user?.fullname || "";
+  const firstName = fullName.split(" ")[0] || "User";
   const isFirstLogin = userInfo?.isFirstLogin || false;
 
   return (

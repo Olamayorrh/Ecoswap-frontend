@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import Sidebar from "./Sidebar/Sidebar.jsx"; // We'll create this sidebar
+import Sidebar from "./Sidebar/Sidebar"; // We'll create this sidebar
 import styles from "./UserLayout.module.css";
 
 const UserLayout = () => {

@@ -1,37 +1,48 @@
 import { Route, Routes, Navigate } from "react-router";
 import "./assets/css/global.css";
-import LandingPage from "./pages/LandingPage.jsx";
-
-import SignUpLogin from "./pages/SignUpLogin/SignUpLogin.jsx"
-import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.jsx";
-import ResetPassword from "./pages/ResetPassword/ResetPassword.jsx";
-import SellerLayout from "./pages/SellerLayout/SellerLayout.jsx";
-import Listing from "./pages/SellerLayout/Listing/Listing.jsx";
-import Orders from "./pages/SellerLayout/Orders/Orders.jsx";
-import Notifications from "./pages/SellerLayout/Notifications/Notifications.jsx";
-import SellerDashboard from "./pages/SellerLayout/Dashboard/SellerDashboard.jsx";
-import SellerSettings from "./pages/SellerLayout/Settings/Settings.jsx";
-import SellerMessages from "./pages/SellerLayout/Messages/Messages.jsx";
+import LandingPage from "./pages/LandingPage";
+import SignUpLogin from "./Pages/SignUpLogin/SignUpLogin";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "./Pages/ResetPassword/ResetPassword";
+import SellerLayout from "./Pages/SellerLayout/SellerLayout";
+import Listing from "./Pages/SellerLayout/Listing/Listing";
+import Orders from "./Pages/SellerLayout/Orders/Orders";
+import Notifications from "./Pages/SellerLayout/Notifications/Notifications";
+import SellerDashboard from "./Pages/SellerLayout/Dashboard/SellerDashboard";
+import SellerSettings from "./Pages/SellerLayout/Settings/Settings";
+import SellerMessages from "./Pages/SellerLayout/Messages/Messages";
 
 // Buyer Layout Imports
-import UserLayout from "./pages/UserLayout/UserLayout.jsx";
-import BuyerDashboard from "./pages/UserLayout/Dashboard/Dashboard.jsx";
-import BuyerMessages from "./pages/UserLayout/Messages/Messages.jsx";
-import BuyerSettings from "./pages/UserLayout/Settings/Settings.jsx";
-import BuyerNotifications from "./pages/UserLayout/Notifications/Notifications.jsx";
+import UserLayout from "./Pages/UserLayout/UserLayout";
+import BuyerDashboard from "./Pages/UserLayout/Dashboard/Dashboard";
+import BuyerListing from "./Pages/UserLayout/Listing/BuyerListing";
+import BuyerMessages from "./Pages/UserLayout/Messages/Messages";
+import BuyerSettings from "./Pages/UserLayout/Settings/Settings";
+import BuyerNotifications from "./Pages/UserLayout/Notifications/Notifications";
+
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
     <>
       <div>
         <Routes>
+          {/* Public routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/signin" element={<SignUpLogin />} />
           <Route path="/signup" element={<SignUpLogin />} />
-          <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
-          <Route path="/reset-password/:token" element={<ResetPassword />}></Route>
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
 
-          <Route path="/seller" element={<SellerLayout />}>
+          {/* Protected seller routes — redirect to / if not logged in */}
+          <Route
+            path="/seller"
+            element={
+              <ProtectedRoute>
+                <SellerLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<SellerDashboard />} />
             <Route path="listing" element={<Listing />} />
@@ -41,16 +52,25 @@ const App = () => {
             <Route path="settings" element={<SellerSettings />} />
           </Route>
 
-          {/* New Buyer Routes */}
-          <Route path="/buyer" element={<UserLayout />}>
+          {/* Protected buyer routes — redirect to / if not logged in */}
+          <Route
+            path="/buyer"
+            element={
+              <ProtectedRoute>
+                <UserLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<BuyerDashboard />} />
-            <Route path="listing" element={<Listing />} />
-            <Route path="orders" element={<Orders />} />
+            <Route path="listing" element={<BuyerListing />} />
             <Route path="messages" element={<BuyerMessages />} />
             <Route path="notifications" element={<BuyerNotifications />} />
             <Route path="settings" element={<BuyerSettings />} />
           </Route>
+
+          {/* Catch-all: redirect unknown URLs to landing page */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </>

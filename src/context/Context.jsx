@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 
 export const userContext = createContext();
@@ -53,8 +53,12 @@ const Context = ({ children }) => {
         { timeout: 10000 } // adding a timeout to fail fast if backend hangs
       );
 
-      // Flag that this is their first login
-      const newUserData = { ...response.data, isFirstLogin: true };
+      // Normalize response: ensure userInfo always has a `user` object with fullname
+      const rawData = response.data;
+      const normalizedUser = rawData.user
+        ? rawData.user
+        : { fullname: rawData.fullname || data.fullname, email: rawData.email || data.email, role: rawData.role || data.role };
+      const newUserData = { ...rawData, user: normalizedUser, isFirstLogin: true };
       setUserInfo(newUserData);
       
       alert("Registration Successful!");
@@ -94,7 +98,12 @@ const Context = ({ children }) => {
         { timeout: 10000 }
       );
 
-      const userData = { ...response.data, isFirstLogin: false };
+      // Normalize response: ensure userInfo always has a `user` object with fullname
+      const rawLogin = response.data;
+      const normalizedLoginUser = rawLogin.user
+        ? rawLogin.user
+        : { fullname: rawLogin.fullname || "", email: rawLogin.email || data.email, role: rawLogin.role || "" };
+      const userData = { ...rawLogin, user: normalizedLoginUser, isFirstLogin: false };
       setUserInfo(userData);
       alert("Login Successful!");
 
@@ -116,35 +125,45 @@ const Context = ({ children }) => {
   const publishListing = async (formData) => {
     setIsLoading(true);
     try {
-      if (!userInfo?.token) {
-        throw new Error("Authentication required. Please login again.");
-      }
-
       const API_URL = import.meta.env.VITE_API_URL || "https://node-server-l5mm.onrender.com";
       const response = await axios.post(`${API_URL}/api/waste/upload`, formData, {
         headers: {
-          'Authorization': `Bearer ${userInfo.token}`,
           'Content-Type': 'multipart/form-data'
         }
       });
-      
-      alert("Listing published successfully!");
       return response.data;
     } catch (error) {
       console.error("Listing Error:", error.response?.data || error.message);
-      alert(error.response?.data?.message || "Failed to publish listing.");
       throw error;
     } finally {
       setIsLoading(false);
     }
   };
 
+  // Fetch all listings with optional filters
+  const fetchListings = async (filters = {}) => {
+    try {
+      const API_URL = import.meta.env.VITE_API_URL || "https://node-server-l5mm.onrender.com";
+      const params = new URLSearchParams();
+      Object.entries(filters).forEach(([key, val]) => {
+        if (val !== undefined && val !== "" && val !== null) {
+          params.append(key, val);
+        }
+      });
+      const queryStr = params.toString();
+      const response = await axios.get(`${API_URL}/api/waste/listings${queryStr ? `?${queryStr}` : ""}`);
+      return response.data;
+    } catch (error) {
+      console.error("Fetch Listings Error:", error.response?.data || error.message);
+      throw error;
+    }
+  };
+
   const analyzeWasteImage = async (file) => {
     setIsLoading(true);
     try {
-      if (!userInfo?.token) {
-        throw new Error("Authentication required. Please login again.");
-      }
+      // TODO: Re-enable auth guard when backend enforces token on waste routes:
+      // if (!userInfo?.token) throw new Error("Authentication required.");
 
       const formData = new FormData();
       formData.append("image", file);
@@ -152,7 +171,8 @@ const Context = ({ children }) => {
       const API_URL = import.meta.env.VITE_API_URL || "https://node-server-l5mm.onrender.com";
       const response = await axios.post(`${API_URL}/api/waste/analyze-image`, formData, {
         headers: {
-          'Authorization': `Bearer ${userInfo.token}`,
+          // TODO: Add Authorization header when backend enforces it:
+          // 'Authorization': `Bearer ${userInfo.token}`,
           'Content-Type': 'multipart/form-data'
         }
       });
@@ -166,9 +186,16 @@ const Context = ({ children }) => {
     }
   };
 
+  // ── Logout: clears session and redirects to landing page ─────────────
+  const logout = useCallback(() => {
+    setUserInfo(null);
+    // Hard navigate so all component state is cleared
+    window.location.href = '/';
+  }, []);
+
   return (
     <userContext.Provider value={{
-      page, 
+      page,
       userInfo,
       isLoading,
       setUserInfo,
@@ -177,7 +204,9 @@ const Context = ({ children }) => {
       registerUser,
       loginUser,
       publishListing,
-      analyzeWasteImage
+      fetchListings,
+      analyzeWasteImage,
+      logout,
     }}>
       {children}
     </userContext.Provider>

@@ -18,7 +18,7 @@
 }
 
 .chatHeader h2 {
-  font-size: 24px;
+  font-size: clamp(19px, 1.8vw, 26px);
   font-weight: 600;
   color: #111827;
   margin: 0;
@@ -44,7 +44,7 @@
   display: flex;
   gap: 12px;
   margin-bottom: 32px;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .searchInputWrapper {
@@ -62,7 +62,7 @@
   background: transparent;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 15px);
   color: #111827;
 }
 
@@ -82,7 +82,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .conversationItem {
@@ -152,7 +152,7 @@
 
 .convoName {
   margin: 0;
-  font-size: 16px;
+  font-size: clamp(14px, 1.3vw, 17px);
   font-weight: 600;
   color: #111827;
 }
@@ -165,7 +165,7 @@
 
 .convoPreview {
   margin: 0;
-  font-size: 14px;
+  font-size: clamp(12px, 1.05vw, 14px);
   color: #9CA3AF;
   font-style: italic;
 }
@@ -212,12 +212,12 @@
 }
 
 .messageBubbleLeft p {
-  background-color: #E2E8F0; /* Slate 200 */
+  background-color: #E2E8F0;
   color: #1E293B;
   padding: 16px;
   border-radius: 12px 12px 12px 0;
   margin: 0 0 4px 0;
-  font-size: 14px;
+  font-size: clamp(13px, 1.05vw, 15px);
   line-height: 1.5;
 }
 
@@ -227,12 +227,12 @@
 }
 
 .messageBubbleRight p {
-  background-color: #10B981; /* Emerald 500 */
+  background-color: #10B981;
   color: white;
   padding: 16px;
   border-radius: 12px 12px 0 12px;
   margin: 0 0 4px 0;
-  font-size: 14px;
+  font-size: clamp(13px, 1.05vw, 15px);
   line-height: 1.5;
 }
 
@@ -344,7 +344,7 @@
   border: none;
   outline: none;
   padding: 8px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.05vw, 15px);
 }
 
 .inputIcons {

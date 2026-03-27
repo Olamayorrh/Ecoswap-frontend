@@ -1,20 +1,47 @@
+/* ── Layout container ──────────────────────────────────────────── */
 .layoutContainer {
   display: flex;
   min-height: 100vh;
   background-color: #ffffff;
 }
 
+/* ── Main content area ─────────────────────────────────────────── */
 .mainContent {
   flex: 1;
-  padding: 40px 60px;
-  margin-left: 260px; /* To account for fixed sidebar */
+  min-width: 0;          /* Prevent flex child from overflowing */
+  padding: 28px 32px;
+  margin-left: 250px;    /* Fixed sidebar width */
   box-sizing: border-box;
+  width: calc(100% - 250px);
 }
 
-/* Responsive */
+/* ── Large screens: generous padding, content spreads naturally ── */
+@media screen and (min-width: 1280px) {
+  .mainContent {
+    padding: 36px 48px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .mainContent {
+    padding: 40px 64px;
+  }
+}
+
+/* ── Tablet (768 – 1024px): slim sidebar ──────────────────────── */
+@media screen and (max-width: 1024px) {
+  .mainContent {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    padding: 24px 24px;
+  }
+}
+
+/* ── Mobile (<768px): no sidebar offset ───────────────────────── */
 @media screen and (max-width: 768px) {
   .mainContent {
     margin-left: 0;
-    padding: 20px;
+    width: 100%;
+    padding: 80px 16px 24px; /* top gap for the hamburger/topbar */
   }
 }
